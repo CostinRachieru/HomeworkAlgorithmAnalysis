@@ -7,18 +7,20 @@
 
 
 int main(int argc, char *argv[]) {
-
+	
 	std::ofstream TestFile;
 	std::string in = "./in/";
 	in += argv[1];
+	in += ".in";
 	TestFile.open(in);
 
 	std::string out = "./out/";
-	out += argv[2];
+	out += argv[1];
+	out += ".out";
 	std::ofstream RefFile;
 	RefFile.open(out);
 
-	if (argc != 3) {
+	if (argc != 2) {
 		std::cout << "Nu sunt specificate ambele fisiere pentru teste.\n";
 		return 0;
 	}
@@ -41,8 +43,6 @@ int main(int argc, char *argv[]) {
     std::uniform_int_distribution<std::mt19937::result_type> range_alphabet(0,25);
     std::uniform_int_distribution<std::mt19937::result_type> range(min,max);
 	
-	// Scrie in fisierul de in cate stringuri vor fi de inserat si de gasit.
- //    string str;
 	for (int i = 0; i < nr; ++i) {
 		std::string str;
 		// Construieste stringul random.
@@ -50,7 +50,6 @@ int main(int argc, char *argv[]) {
 		for (unsigned int j = 0; j < nr_char; ++j) {
 			str += alphabet[range_alphabet(rng)];
 		}
-		// Scrie in fisierul de in si out.
 		TestFile << str << "\n";
 		if (i == 0) {
 			TestFile << nr << "\n";

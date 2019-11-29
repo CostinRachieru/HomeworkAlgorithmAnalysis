@@ -4,48 +4,48 @@
 #include <random>
 #include <fstream>
 
-using namespace std;
-
 int main(int argc, char *argv[]) {
 
-	ofstream TestFile;
-	string in = "./in/";
+	std::ofstream TestFile;
+	std::string in = "./in/";
 	in += argv[1];
+	in += ".in";
 	TestFile.open(in);
 
-	string out = "./out/";
-	out += argv[2];
-	ofstream RefFile;
+	std::tring out = "./out/";
+	out += argv[1];
+	out += ".out";
+	std::ofstream RefFile;
 	RefFile.open(out);
 
-	if (argc != 3) {
-		cout << "Nu sunt specificate ambele fisiere pentru teste.\n";
+	if (argc != 2) {
+		std::cout << "Nu este specificat numele testului.\n";
 		return 0;
 	}
 
-	cout << "Numar de stringuri: ";
+	std::cout << "Numar de stringuri: ";
 	int nr;
-	cin >> nr;
+	std::cin >> nr;
 
-	cout << "Numarul minim de caractere dintr-un string: ";
+	std::cout << "Numarul minim de caractere dintr-un string: ";
 	int min;
-	cin >> min;
+	std::cin >> min;
 
-	cout << "Numarul maxim de caractere dintr-un string: ";
+	std::cout << "Numarul maxim de caractere dintr-un string: ";
 	int max;
-	cin >> max;
+	std::cin >> max;
 
-	vector<string> *array = new vector<string>();
-	static const string alphabet = {"abcdefghijklmnopqrstuvwxyz"};
-	random_device dev;
-    mt19937 rng(dev());
-    uniform_int_distribution<mt19937::result_type> range_alphabet(0,25);
-    uniform_int_distribution<mt19937::result_type> range(min,max);
+	std::vector<std::string> *array = new std::vector<std::string>();
+	static const std::string alphabet = {"abcdefghijklmnopqrstuvwxyz"};
+	std::random_device dev;
+    std::mt19937 rng(dev());
+    std::uniform_int_distribution<std::mt19937::result_type> range_alphabet(0,25);
+    std::uniform_int_distribution<std::mt19937::result_type> range(min,max);
 	
 	// Scrie in fisierul de in cate stringuri vor fi de inserat si de gasit.
     TestFile << nr << "\n";
 	for (int i = 0; i < nr; ++i) {
-		string str;
+		std::string str;
 		// Construieste stringul random.
 		unsigned int nr_char = range(rng);
 		for (unsigned int j = 0; j < nr_char; ++j) {

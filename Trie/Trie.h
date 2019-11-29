@@ -54,19 +54,6 @@ class Trie
         key.erase(key.begin());
         return children[next]->search(key);
     }
-    
-    bool remove(std::string key) {
-        if (key.empty()) {
-            isEndOfWord = false;
-            return true;
-        }
-        int next = key[0] - 'a';
-        if (children[next] == NULL) {
-            return false;
-        }
-        key.erase(key.begin());
-        return children[next]->remove(key);
-    }
 };
 #endif
 
