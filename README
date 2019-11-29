@@ -1,0 +1,111 @@
+// Copyright 2019 Rachieru Costin Tudor <<costinrch46@gmail.com>>
+Nume: Rachieru
+	Prenume: Costin Tudor
+	Grupa: 324
+	Seria: CA
+
+	Data inceperii temei: 27-11-2019
+	Data finalizarii temei: 29-11-2019
+
+	Descrierea fisierelor din arhiva:
+
+	- algo.h:
+		Implementarea functiilor levenshteinDistance si LCSDistance. Prima
+	returneaza distanta specifica, iar a doua returneaza cea mai lunga
+	subsecventa. 
+	
+	- algo_test.cpp:
+		Implementarea main-ului care face citirea si afisarea la tastatura.
+
+	- Makefile:
+		Genereaza la comanda "make" executabilul "test", iar la comanda
+	"make clean" curata directorul de fisirele create.
+
+	- testGenerator.cpp
+		Generatorul de teste facut de mine si folosit pentru generarea a 3
+	teste.
+
+	- Folder "in":
+		Inputurile pentru 10 teste in fisiere denumite dupa forma "testID.in".
+
+	- Folder "out":
+		Outputurile celor 10 teste in fisiere denumite dupa forma "testID.in".
+
+	- Folder "Trie":
+			- Trie.h:
+				Implementare structurii de date Trie cu cele doua operatii
+			specifice: insert si search.
+
+			- trie_test.cpp:
+				Implementarea main-ului care face citirea si afisarea la
+			tastatura.
+
+			- Makefile:
+				Genereaza la comanda "make" executabilul "test", iar la comanda
+			"make clean" curata directorul de fisirele create.
+			
+			- testGeneratorTrie.cpp
+				Generatorul de teste facut de mine si folosit pentru generarea
+			celor 10 teste.
+
+			- Folder "in":
+				Inputurile pentru 10 teste in fisiere denumite dupa forma
+			"testID.in".
+
+			- Folder "out":
+				Outputurile celor 10 teste in fisiere denumite dupa forma
+				"testID.in".
+
+
+	Structura testelor pentru algoritmii Edit Distance:
+
+			Se simuleaza scrierea unui cuvant "gresit" sau "incomplet" si
+		gasirea celor mai apropiate cuvinte de acesta prin doua metode:
+				- prima metoda, cu ajutorul Levenshtein Distance, in care
+			putem folosi insert, delete si replace pentru a ajunge la un alt
+			cuvant.
+				- a doua metoda, cu ajutorul Longest Common Subsequence, in
+			care putem folosi doar insert si delete pentru a ajunge la un alt
+			cuvant.
+
+			Input:
+				Acesta va avea pe prima linie cuvantul scris "gresit" sau
+			"incomplet". Pe urmatoarea linie, numarul de cuvinte N, in care
+			va fi cautat cel mai apropiat cuvant de acesta, urmand ca pe
+			urmatoarele N linii sa fie cate un cuvant din "dictionar".
+
+			Output:
+				Pe prima linie din output va fi scris: "Distanta minima
+			Levenshtein este: L", unde L este distanta minima gasita intre
+			cuvantul dat "gresit" si cuvintele din "dictionar".
+				Pe urmatorele linii vor fi scrise, cate unul pe rand, cuvintele
+			gasite la acea distanta.
+				Dupa acestea, ca mai sus, pe o linie noua, va fi afisat mesajul
+			"Cea mai lunga subsecventa: X", unde X este lungimea acesteia.
+				Pe urmatoarele linii vor fi scrise, cate unul pe rand, cuvintele
+			gasite cu cele mai lungi subsecvente.
+
+			Primele 7 teste sunt scrise de mana, iar ultimele 3 generate automat.
+
+
+	Structura testelor pentru testarea Trie:
+
+			Input:
+				Pe prima linie se gaseste N, numarul de cuvinte de inserat si de
+			cautat in Trie. Pe urmatoarele N linii vor fi cate un cuvant pe rand,
+			iar in urmatoarele N linii, cuvintele care trebuie cautate.
+
+			Output:
+				Output-ul ar trebui sa contina numai mesaje de tipul "STRING a
+			fost gasit.", cate unul pe linie, unde STRING este cuvantul cautat.
+			Input-urile sunt facute de asa natura incat toate cuvintele trebuie
+			gasite. Asadar ar trebui sa fie N linii de acest tip.
+
+			Am structurat testele astfel incat sa avem intre 100 si 300 000 de
+		cuvinte de inserat in Trie. Unele teste au cuvinte scurte, altele lungi.
+
+
+
+
+		
+
